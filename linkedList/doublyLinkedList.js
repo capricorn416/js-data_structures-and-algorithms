@@ -1,17 +1,17 @@
-// import { Node } from './node'
-// import { defaultEquals } from './defaultEquals'
-
-// 结点
 class Node {
   constructor(element) {
     this.element = element
     this.next = null
   }
 }
-
-// 判断相等
 function defaultEquals(a, b) {
   return a === b
+}
+class DoublyNode extends Node {
+  constructor(element, next, prev) {
+    super(element, next)
+    this.prev = prev
+  }
 }
 
 // 链表
@@ -122,3 +122,17 @@ class LinkedList {
     return objString
   }
 } 
+
+// 双向链表
+class DoublyLinkedList extends LinkedList{
+  constructor(equalsFn = defaultEquals) {
+    super(equalsFn)
+    this.tail = null
+  }
+  // 在指定位置插入
+  insert(element, index) {
+    if(index >= 0 && index <= this.count) {
+      let node = new DoublyNode(element)
+    }
+  }
+}
