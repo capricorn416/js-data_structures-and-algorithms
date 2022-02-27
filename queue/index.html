@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./queue.js"></script>
+  <script src="./deque.js"></script>
+  <script>
+    // let deque = new Deque()
+    // deque.addBack(1)
+    // deque.addFront(0)
+    // deque.addFront(-1)
+    // console.log(deque);
+    // console.log(deque.toString())
+    function hotPotato(elementList, number) {
+      let queue = new Queue() 
+      for(let i = 0; i < elementList.length; i++) {
+        queue.enqueue(elementList[i])
+      }
+      while(queue.size() > 1) {
+        for(let i = 0; i < number; i++) {
+          let a = queue.dequeue()
+          queue.enqueue(a)
+        }
+        let res = queue.dequeue()
+      }
+      return queue.dequeue()
+    }
+    console.log(hotPotato(['a', 'b', 'c', 'd', 'e'], 7))
+
+    
+  </script>
+</body>
+</html>

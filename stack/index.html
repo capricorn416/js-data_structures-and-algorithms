@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./stack-array.js"></script>
+  <!-- <script src="./stack.js"></script> -->
+  <script>
+    // 十进制转二进制
+    function dtob(decNumber) {
+      let stack = new Stack()
+      let bnum = ''
+      while(decNumber) {
+        let n = Math.floor(decNumber%2)
+        stack.push(n)
+        decNumber = Math.floor(decNumber/2)
+      }
+      while(!stack.isEmpty()) {
+        bnum += stack.pop()
+        // console.log(bnum);
+      }
+      return bnum
+    }
+    console.log(dtob(233));
+    // dtob(10)
+
+  </script>
+</body>
+</html>
